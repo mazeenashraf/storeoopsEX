@@ -1,0 +1,22 @@
+<div class="container mt-3 p-3 pt-3">
+  <h1 class="mt-4 pt-4">Categories</h1>
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th style="width: 180px;">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories">
+        <td>{{ category.name }}</td>
+        <td>
+          <button class="btn-edit me-2" (click)="editCategory(category._id)">Edit</button>
+          <button class="btn-delete" (click)="deleteCategory(category._id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

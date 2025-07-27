@@ -1,0 +1,43 @@
+<section class="register-section"  data-aos="zoom-in">
+  <div class="container-fluid h-100 p-0">
+    <div class="row h-100 p-4" >
+      <!-- Left: Form -->
+      <div class="col-md-6 d-flex align-items-center justify-content-center bg-light">
+        <div class="p-4 w-100" style="max-width: 500px;">
+          <h2 class="fw-semibold mb-4">Create An Account</h2>
+          <form [formGroup]="registerform" (ngSubmit)="submitform()">
+            <div class="mb-3">
+              <label class="form-label"><i class="fa fa-user me-2"></i>First Name</label>
+              <input type="text"  formControlName="firstName" class="form-control" placeholder="Enter your First name" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label"><i class="fa fa-user me-2"></i>Last Name</label>
+              <input type="text" formControlName="lastName" class="form-control" placeholder="Enter your Last name" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label"><i class="fa fa-envelope me-2"></i>Email</label>
+              <input type="email" formControlName="email" class="form-control" placeholder="Enter your email" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label"><i class="fa fa-lock me-2"></i>Password</label>
+              <input type="password" formControlName="password" class="form-control" placeholder="Enter password" />
+            </div>
+            <button [disabled]="registerform.invalid" class="btn btn-outline-dark w-100 rounded-pill" role="button">Sign Up</button>
+            <p class="text-black-50 fw-semibold mt-3"> Already have an account ? <a routerLink="/login" class="text-decoration-none fw-semibold text-capitalize text-dark fs-5"> login </a> </p>
+          </form>
+        </div>
+      </div>
+
+
+
+
+      <!-- Right: Background Image -->
+      <div class="col-md-6 d-none d-md-block image-side position-relative">
+        <div class="overlay-text text-white text-center p-4">
+          <h2 class="fw-semibold  mb-3">Welcome to Closet</h2>
+          <p class="fw-semibold fs-6">Discover the latest trends,<br>express your unique style.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

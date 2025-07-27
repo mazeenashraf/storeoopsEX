@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg fixed-top w-100 bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand text-capitalize fw-semibold" routerLink="/home">Oops</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Links Center -->
+      <ul class="navbar-nav d-flex justify-content-center align-items-center text-center mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link my" routerLink="/home" routerLinkActive="text-dark fw-semibold">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link my" routerLink="/products" routerLinkActive="text-dark fw-semibold">Fits & Finds</a>
+        </li>
+
+        <!-- Cart only if logged in -->
+        <ng-container *ngIf="islogin">
+          <li class="nav-item">
+            <a class="nav-link my" routerLink="/cart" routerLinkActive="text-dark fw-semibold">
+              <i class="fas fa-cart-shopping text-dark fa-xl"></i>
+            </a>
+          </li>
+        </ng-container>
+      </ul>
+
+      <!-- Right side -->
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center gap-3">
+        <!-- Instagram -->
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.instagram.com/oops_eg/" target="_blank">
+            <i class="fab fa-instagram text-danger fa-xl"></i>
+          </a>
+        </li>
+
+        <!-- If not logged in -->
+        <ng-container *ngIf="!islogin">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login">
+              <i class="fas fa-sign-in-alt me-1"></i> Login
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/register">Register</a>
+          </li>
+        </ng-container>
+
+        <!-- If logged in -->
+        <ng-container *ngIf="islogin">
+          <!-- Notifications -->
+          <li class="nav-item">
+            <app-notification-dropdown></app-notification-dropdown>
+          </li>
+
+          <!-- Profile Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="fas fa-user fa-lg"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end profile-dropdown" aria-labelledby="profileDropdown">
+              <li><a class="dropdown-item" routerLink="/profile"><i class="fas fa-cog me-2"></i>Settings</a></li>
+
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" routerLink="/orders"><i class="fas fa-cog me-2"></i>My Orders</a></li>
+
+              <!-- <li>
+                <a  role="button" class="dropdown-item">
+                  <i class="fas fa-sign-out-alt me-2"></i>Sign Out
+                </a>
+              </li> -->
+
+            </ul>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</nav>

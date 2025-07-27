@@ -1,0 +1,77 @@
+<!-- T-Shirts Section -->
+<section class="shadow p-4 overflow-hidden border" data-aos="fade-up">
+  <div class="container mt-3">
+    <h2 class="fw-semibold mb-3 text-capitalize">t-shirts</h2>
+    <div class="row row-cols-2 g-4 row-cols-md-3">
+      @for (tsh of Tshirts; track tsh._id) {
+        <div class="col">
+          <div class="card" [routerLink]="['/details', tsh.id]">
+            <img class="img-card" [src]="tsh.imageUrl" [alt]="tsh.title" />
+          </div>
+          <h3 class="mt-3">
+            {{ tsh.title }}
+            <span *ngIf="isSoldOut(tsh)" class="badge bg-danger ms-2 px-2 py-1 rounded-pill">Sold Out</span>
+          </h3>
+          @if (tsh.originalPrice == tsh.price) {
+            <h5 class="text-dark fw-semibold mt-2">{{ tsh.originalPrice }} LE</h5>
+          } @else {
+            <h5 class="text-decoration-line-through fw-semibold">{{ tsh.originalPrice }} LE</h5>
+            <h5 class="text-dark fw-semibold">{{ tsh.price }} LE</h5>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Pants Section -->
+<section class="shadow p-4 overflow-hidden border" data-aos="fade-up">
+  <div class="container mt-3">
+    <h2 class="fw-semibold mb-3 text-capitalize">pants</h2>
+    <div class="row row-cols-2 g-4 row-cols-md-3">
+      @for (pan of Pants; track pan._id) {
+        <div class="col">
+          <div class="card" [routerLink]="['/details', pan.id]">
+            <img class="img-card" [src]="pan.imageUrl" [alt]="pan.title" />
+          </div>
+          <h3 class="mt-3">
+            {{ pan.title }}
+            <span *ngIf="isSoldOut(pan)" class="badge bg-danger ms-2 px-2 py-1 rounded-pill">Sold Out</span>
+          </h3>
+          @if (pan.originalPrice == pan.price) {
+            <h5 class="text-dark fw-semibold mt-2">{{ pan.originalPrice }} LE</h5>
+          } @else {
+            <h5 class="text-decoration-line-through fw-semibold">{{ pan.originalPrice }} LE</h5>
+            <h5 class="text-dark fw-semibold">{{ pan.price }} LE</h5>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Shorts Section -->
+<section class="shadow p-4 overflow-hidden border" data-aos="fade-up">
+  <div class="container mt-3">
+    <h2 class="fw-semibold mb-3 text-capitalize">shorts</h2>
+    <div class="row row-cols-2 g-4 row-cols-md-3">
+      @for (sh of SHORTS; track sh._id) {
+        <div class="col">
+          <div class="card" [routerLink]="['/details', sh.id]">
+            <img class="img-card" [src]="sh.imageUrl" [alt]="sh.title" />
+          </div>
+          <h3 class="mt-3">
+            {{ sh.title }}
+            <span *ngIf="isSoldOut(sh)" class="badge bg-danger ms-2 px-2 py-1 rounded-pill">Sold Out</span>
+          </h3>
+          @if (sh.originalPrice == sh.price) {
+            <h5 class="text-dark fw-semibold mt-2">{{ sh.originalPrice }} LE</h5>
+          } @else {
+            <h5 class="text-decoration-line-through fw-semibold">{{ sh.originalPrice }} LE</h5>
+            <h5 class="text-dark fw-semibold">{{ sh.price }} LE</h5>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<!-- يظهر فقط لو Admin -->
+<div *ngIf="role() === 'admin'" class="mb-3 mt-4 pt-4" >
+  <button (click)="toggleMenu()" class="btn btn-outline-primary">
+    Admin Menu
+  </button>
+
+  <div *ngIf="isOpen()" class="mt-2 bg-light p-3 rounded shadow-sm">
+    <ul class="list-unstyled mb-0">
+      <li class="mb-2">
+        <a routerLink="/dashboard" class="text-decoration-none btn btn-primary text-capitalize ">dashboard</a>
+      </li>
+      <li class="mb-2">
+        <a routerLink="/all-products-admin" class="text-decoration-none btn btn-primary text-capitalize ">all products </a>
+      </li>
+      <li class="mb-2">
+        <a routerLink="/add-product" class="text-decoration-none btn btn-primary text-capitalize">Add Product</a>
+      </li>
+      <li class="mb-2">
+        <a routerLink="/allordersadmin" class="text-decoration-none btn btn-primary text-capitalize">All orders</a>
+      </li>
+      <li class="mb-2">
+        <a routerLink="/allusers" class="text-decoration-none btn btn-primary text-capitalize">All users</a>
+      </li>
+      <li class="mb-2">
+        <a routerLink="/allcategoriesadmin" class="text-decoration-none btn btn-primary text-capitalize">all categories</a>
+      </li>
+      <li class="mb-2">
+        <a routerLink="/addcategoryadmin" class="text-decoration-none btn btn-primary text-capitalize">Add category</a>
+      </li>
+
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.register-section {
+  height: 100vh;
+
+}
+
+.image-side {
+background-image:
+  linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3)),
+  url('/img/00EB8349-F363-4169-8CE6-25315B178959.jpg');
+
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  height: 100vh;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.overlay-text {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}

@@ -1,0 +1,140 @@
+<!-- Hero Section -->
+<section class="m d-flex p-4 align-items-center justify-content-start" style="height: 50vh;" data-aos="zoom-in">
+  <div class="ms-5">
+    <h1 class="fa-2xl text-white font-bold text-capitalize mt-3">
+      wear your story
+    </h1>
+    <br />
+    <button class="btn btn-outline-light mt-3 fw-semibold text-capitalize" routerLink="/products">
+      Shop Now
+    </button>
+  </div>
+</section>
+
+<!-- Comments Between Sections -->
+<div class="p-4 mt-3">
+  <h2 class="fw-semibold text-capitalize text-center">
+    Bold. Unexpected. Always <span class="main-color">Oops</span>!
+  </h2>
+</div>
+
+<!-- T-Shirts Section -->
+<section class="shadow p-4 overflow-hidden border" data-aos="fade-up">
+  <div class="container mt-3">
+    <h2 class="fw-semibold mb-3 text-capitalize">t-shirts</h2>
+    <div class="row row-cols-2 g-4 row-cols-md-3">
+      @for (tsh of Tshirtscat.slice(0, 2); track tsh._id) {
+        <div class="col">
+          <div class="card" routerLink="/products">
+            <img class="img-card" [src]="tsh.imageUrl" [alt]="tsh.title" />
+          </div>
+          <h3 class="mt-3">
+            {{ tsh.title }}
+            
+            <span *ngIf="isSoldOut(tsh)" class="badge bg-danger ms-2 px-2 py-1 rounded-pill">Sold Out</span>
+          </h3>
+          @if (tsh.originalPrice == tsh.price) {
+            <h5 class="text-dark fw-semibold mt-2">{{ tsh.originalPrice }} LE</h5>
+          } @else {
+            <h5 class="text-decoration-line-through fw-semibold">{{ tsh.originalPrice }} LE</h5>
+            <h5 class="text-dark fw-semibold">{{ tsh.price }} LE</h5>
+          }
+        </div>
+      }
+    </div>
+    <div class="d-flex justify-content-center align-items-center mt-4">
+      <button class="btn btn-dark text-capitalize fw-semibold rounded-3" routerLink="/products">see more</button>
+    </div>
+  </div>
+</section>
+
+<!-- Pants Section -->
+<section class="shadow p-4 overflow-hidden border" data-aos="fade-up">
+  <div class="container mt-3">
+    <h2 class="fw-semibold mb-3 text-capitalize">pants</h2>
+    <div class="row row-cols-2 g-4 row-cols-md-3">
+      @for (pans of pantscat.slice(0, 2); track pans._id) {
+        <div class="col">
+          <div class="card" routerLink="/products">
+            <img class="img-card" [src]="pans.imageUrl" [alt]="pans.title" />
+          </div>
+          <h3 class="mt-3">{{ pans.title }}</h3>
+          @if (pans.originalPrice == pans.price) {
+            <h5 class="text-dark">{{ pans.originalPrice }} LE</h5>
+          } @else {
+            <h5 class="text-decoration-line-through fw-semibold">{{ pans.originalPrice }} LE</h5>
+            <h5 class="text-dark fw-semibold">{{ pans.price }} LE</h5>
+          }
+        </div>
+      }
+    </div>
+    <div class="d-flex justify-content-center align-items-center mt-4">
+      <button class="btn btn-dark text-capitalize fw-semibold rounded-3" routerLink="/products">see more</button>
+    </div>
+  </div>
+</section>
+
+<!-- Shorts Section -->
+<section class="shadow p-4 overflow-hidden border" data-aos="zoom-in">
+  <div class="container mt-3">
+    <h2 class="fw-semibold mb-3 text-capitalize">shorts</h2>
+    <div class="row row-cols-2 g-4 row-cols-md-3">
+      @for (short of shorts.slice(0, 2); track short._id) {
+        <div class="col">
+          <div class="card" routerLink="/products">
+            <img class="img-card" [src]="short.imageUrl" [alt]="short.title" />
+          </div>
+          <h3 class="mt-3">{{ short.title }}</h3>
+          @if (short.originalPrice == short.price) {
+            <h5 class="text-dark fw-semibold">{{ short.originalPrice }} LE</h5>
+          } @else {
+            <h5 class="text-decoration-line-through fw-semibold">{{ short.originalPrice }} LE</h5>
+            <h5 class="text-dark fw-semibold">{{ short.price }} LE</h5>
+          }
+        </div>
+      }
+    </div>
+    <div class="d-flex justify-content-center align-items-center mt-4">
+      <button class="btn btn-dark text-capitalize fw-semibold rounded-3" routerLink="/products">see more</button>
+    </div>
+  </div>
+</section>
+
+<!-- New Arrivals Section -->
+<section class="shadow p-4 border" data-aos="zoom-in">
+  <h3 class="text-black text-capitalize mt-2">
+    new <span class="main-color">arrivals</span>
+  </h3>
+  <div class="container mt-3">
+    <div class="row row-cols-1 g-4 row-cols-md-3">
+      @for (prod of allproudcts; track prod.id) {
+        <div class="col">
+          <div class="card" routerLink="/products">
+            <img class="img-card object-fit-contain" [src]="prod.imageUrl" height="450px" [alt]="prod.title" />
+          </div>
+          <h3 class="mt-3">{{ prod.title }}</h3>
+          @if (prod.originalPrice == prod.price) {
+            <h5 class="text-dark fw-semibold">{{ prod.originalPrice }} LE</h5>
+          } @else {
+            <h5 class="text-decoration-line-through fw-semibold">{{ prod.originalPrice }} LE</h5>
+            <h5 class="text-dark fw-semibold">{{ prod.price }} LE</h5>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Final Message Section -->
+<section class="bg-body-tertiary border shadow p-3" data-aos="zoom-in">
+  <div class="container p-4 text-center">
+    <h2 class="fw-semibold mt-3">
+      Not just clothes — <span class="main-color">stories</span> stitched in every thread.
+    </h2>
+    <br />
+    <h3 class="mt-3 fw-semibold">
+      Step into a world curated for your <span class="main-color">vibe</span>,
+      your <span class="main-color">mood</span>, your <span class="main-color">moment</span>.
+    </h3>
+  </div>
+</section>

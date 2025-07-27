@@ -1,0 +1,22 @@
+.color-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* ✅ الأبيض نديه بوردر رمادي علشان يبان */
+.white-border {
+  border: 2px solid #999 !important;
+}
+
+/* ✅ لما اللون يتحدد */
+.selected-color {
+  outline: 3.5px solid #0d6dfd9e; /* لون أزرق قوي */
+  outline-offset: 0.4px;
+  box-shadow: 0 0 8px rgba(13, 110, 253, 0.6); /* نفس لون البوردر */
+}

@@ -1,0 +1,81 @@
+<section class="rounded-3 p-4 border border-black shadow">
+  <div class="container p-3 mt-3">
+    <div class="text-center mb-5">
+      <h1 class="fw-semibold mt-3 text-capitalize">Shop <span class="text-black">Cart</span></h1>
+
+      <button class="btn btn-dark mt-3 rounded-pill w-50" (click)="clearCart()">Clear Cart</button>
+      <span class="text-capitalize fw-semibold fs-5 d-block mt-3">Total cart price: {{ cartDetails.subTotal }} LE</span>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="row g-4">
+          @for (cart of cartDetails.items; track cart.product._id) {
+            <div class="col-12">
+              <div class="card h-100 shadow-sm p-3">
+                <div class="row g-3 align-items-center">
+
+                  <!-- Image -->
+                  <div class="col-12 col-md-4 text-center">
+                    <img [src]="cart.product.imageUrl"
+                         [alt]="cart.product.title"
+                         class="img-fluid rounded object-fit-contain"
+                         style="max-height: 250px;" />
+                  </div>
+
+                  <!-- Info & Actions -->
+                  <div class="col-12 col-md-8">
+                    <div class="d-flex flex-column justify-content-between gap-2">
+
+                      <!-- Product Info -->
+                      <div>
+                        <h4 class="fw-semibold text-capitalize mb-2">{{ cart.product.title }}</h4>
+                        <p class="fw-semibold text-capitalize mb-1">Size: <span class="text-body">{{ cart.size }}</span></p>
+                        <p class="fw-semibold text-capitalize mb-1">Color: <span class="text-body">{{ cart.color }}</span></p>
+
+                        @if (cart.product.originalPrice === cart.product.price) {
+                          <p class="fw-semibold fs-6 mt-2 mb-0">{{ cart.product.originalPrice }} LE</p>
+                        }
+                        @else {
+                          <p class="text-decoration-line-through fw-semibold text-muted mb-1">{{ cart.product.originalPrice }} LE</p>
+                          <p class="fw-semibold fs-6 text-dark">{{ cart.product.price }} LE</p>
+                        }
+                      </div>
+
+                      <!-- Quantity & Delete -->
+                      <div class="d-flex align-items-center justify-content-between mt-3">
+                        <div class="d-flex align-items-center gap-3">
+                          <i (click)="updatecount(cart.product.id, cart.quantity+1, cart.color, cart.size)"
+                             role="button"
+                             class="fa-regular fa-square-plus text-success fa-lg cursor-pointer"></i>
+                          <span class="fw-semibold fs-6">{{ cart.quantity }}</span>
+                          <i (click)="updatecount(cart.product.id, cart.quantity-1, cart.color, cart.size)"
+                             role="button"
+                             class="fa-regular fa-square-minus text-danger fa-lg cursor-pointer"></i>
+                        </div>
+
+                        <i (click)="removeCart(cart.product._id, cart.color, cart.size)"
+                           role="button"
+                           class="fas fa-trash text-danger fa-lg cursor-pointer"></i>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Checkout Button -->
+    <div class="text-center mt-5">
+      <button class="btn btn-success  btn-lg rounded-pill px-5 shadow-sm"  routerLink="/checkout">
+        <i class="fas fa-credit-card me-2"></i> Checkout
+      </button>
+    </div>
+
+  </div>
+</section>

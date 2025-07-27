@@ -1,0 +1,123 @@
+<section class="mt-4 pt-4 p-4">
+<div class="container py-4">
+  <h2 class="text-center mb-4">Add New Product</h2>
+
+  <form (ngSubmit)="submitProduct()" #productForm="ngForm">
+
+    <!-- Category -->
+    <div class="mb-3">
+      <label for="category" class="form-label">Category</label>
+      <select
+        class="form-select"
+        id="category"
+        required
+        [(ngModel)]="category"
+        name="category"
+      >
+        <option disabled value="">Select Category</option>
+        <option *ngFor="let cat of mycat" [value]="cat._id">
+          {{ cat.name }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Title -->
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        required
+        [(ngModel)]="title"
+        name="title"
+        placeholder="Product Title"
+      />
+    </div>
+
+    <!-- Description -->
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea
+        class="form-control"
+        id="description"
+        required
+        [(ngModel)]="description"
+        name="description"
+        rows="3"
+        placeholder="Product Description"
+      ></textarea>
+    </div>
+
+    <!-- Price -->
+    <div class="mb-3">
+      <label for="originalPrice" class="form-label">Original Price</label>
+      <input
+        type="number"
+        class="form-control"
+        id="originalPrice"
+        required
+        [(ngModel)]="originalPrice"
+        name="originalPrice"
+        placeholder="Price"
+      />
+    </div>
+
+    <!-- Variants -->
+    <div class="mb-3">
+      <label class="form-label">Variants</label>
+      <div *ngFor="let variant of variants; let i = index" class="row g-2 mb-2">
+        <div class="col-md-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Size"
+            [(ngModel)]="variant.size"
+            name="variantSize{{ i }}"
+            required
+          />
+        </div>
+        <div class="col-md-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Color"
+            [(ngModel)]="variant.color"
+            name="variantColor{{ i }}"
+            required
+          />
+        </div>
+        <div class="col-md-3">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Quantity"
+            [(ngModel)]="variant.quantity"
+            name="variantQuantity{{ i }}"
+            required
+          />
+        </div>
+        <div class="col-md-3">
+          <button type="button" class="btn btn-danger w-100" (click)="removeVariant(i)">Remove</button>
+        </div>
+      </div>
+      <button type="button" class="btn btn-secondary mt-2" (click)="addVariant()">Add Variant</button>
+    </div>
+
+    <!-- Images -->
+    <div class="mb-3">
+      <label class="form-label">Upload Images</label>
+      <input
+        type="file"
+        class="form-control"
+        multiple
+        (change)="onImagesSelected($event)"
+      />
+    </div>
+
+    <!-- Submit -->
+    <button type="submit" class="btn btn-primary w-100 mt-3">Add Product</button>
+  </form>
+</div>
+
+</section>

@@ -1,0 +1,12 @@
+<div class="container mt-3 pt-4 ">
+  <h2 class="mt-4 pt-4">Add New Category</h2>
+
+  <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Category Name</label>
+      <input type="text" class="form-control" id="name" formControlName="name" required />
+    </div>
+
+    <button type="submit" class="submit-btn" [disabled]="categoryForm.invalid">Add Category</button>
+  </form>
+</div>

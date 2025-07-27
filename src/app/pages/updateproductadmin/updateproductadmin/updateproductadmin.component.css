@@ -1,0 +1,95 @@
+.form-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  color: #e67e22;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.form-control, .form-select {
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.variant-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.variant-row input {
+  flex: 1;
+}
+
+.btn-add-variant {
+  background-color: #e67e22;
+  color: white;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  border: none;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-add-variant:hover {
+  background-color: #cf711f;
+}
+
+.btn-submit {
+  width: 100%;
+  background-color: #e67e22;
+  color: white;
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  border: none;
+  margin-top: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #cf711f;
+}
+
+.form-section {
+  margin-bottom: 25px;
+}
+
+.form-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+  border-left: 4px solid #e67e22;
+  padding-left: 10px;
+}
+
+.delete-icon {
+  color: #ff4d4f;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.delete-icon:hover {
+  color: #d9363e;
+}

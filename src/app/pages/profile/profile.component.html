@@ -1,0 +1,51 @@
+<section class="register-section" data-aos="zoom-in">
+  <div class="container-fluid h-100 p-0">
+    <div class="row h-100 p-4 justify-content-center">
+      <div class="col-md-12 d-flex align-items-center justify-content-center bg-light rounded shadow">
+        <div class="p-4 w-100" style="max-width: 500px;">
+          <h2 class="fw-semibold mb-4 text-center">Update Profile</h2>
+          <form  [formGroup]="profileform" (ngSubmit)="submitform()"  >
+            <div class="mb-3">
+              <label class="form-label">
+                <i class="fa fa-user me-2"></i>First Name
+              </label>
+              <input type="text" formControlName="firstName" class="form-control" placeholder="Enter your first name" />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">
+                <i class="fa fa-user me-2"></i>Last Name
+              </label>
+              <input type="text" formControlName="lastName" class="form-control" placeholder="Enter your last name" />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">
+                <i class="fa fa-envelope me-2"></i>Email
+              </label>
+              <input type="email" formControlName="email" class="form-control" placeholder="Enter your email" />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">
+                <i class="fa fa-lock me-2"></i>Old Password
+              </label>
+              <input type="password" formControlName="oldPassword" class="form-control" placeholder="Enter old password" />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">
+                <i class="fa fa-lock me-2"></i>New Password
+              </label>
+              <input type="password" formControlName="newPassword" class="form-control" placeholder="Enter new password" />
+            </div>
+
+            <button  class="btn btn-outline-dark w-100 rounded-pill" role="button" >
+              Save Changes
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

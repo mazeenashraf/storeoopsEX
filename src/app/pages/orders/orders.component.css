@@ -1,0 +1,92 @@
+
+    .mysec {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .status-link-top {
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      color: white;
+      text-align: center;
+      background-color: #6c757d;
+      transition: 0.3s;
+    }
+
+    .status-link-top:hover {
+      opacity: 0.85;
+    }
+
+    .status-pending { background-color: #ffc107; color: #000; }
+    .status-processing { background-color: #17a2b8; }
+    .status-shipped { background-color: #007bff; }
+    .status-delivered { background-color: #28a745; }
+    .status-cancelled { background-color: #dc3545; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+      font-size: 15px;
+      vertical-align: middle;
+    }
+
+    thead {
+      background-color: #2f80ed;
+      color: #fff;
+    }
+
+    tbody tr:hover {
+      background-color: #f0f4ff;
+    }
+
+    .status-badge {
+      background-color: #ffc107;
+      color: #000;
+      border-radius: 30px;
+      padding: 4px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .btn-view {
+      background-color: #2f80ed;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn-view:hover {
+      background-color: #1c64d1;
+    }

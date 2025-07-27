@@ -1,0 +1,27 @@
+.m{
+  min-height: 50vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5) , rgba(0, 0, 0, 0.5)) , url(/img/fb-landscape-1200-x-630-au8a4111__1_-jpg_custom_resized_a935769c-9055-4bba-b4ae-9cc16c75e951\ \(1\).jpg);
+  background-size: cover;
+  background-position: center center;
+}
+.main-color{
+  /* color: #E65E77; */
+  color: black;
+}
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(201, 22, 22, 0.136);
+}
+
+
+.our{
+  cursor: pointer;
+}

@@ -1,0 +1,73 @@
+<section class="checkout-form-section container p-4">
+  <div class="mt-3 pt-4">
+    <h2 class="text-center mb-4 pt-4 mt-3 fw-bold text-capitalize">
+      Checkout <span class="main-color">Form</span>
+    </h2>
+  </div>
+
+  <form class="shadow rounded-4 p-4 border border-black bg-light-subtle" [formGroup]="checkoutForm" (ngSubmit)="submitform()">
+    <div class="row g-4">
+
+      <!-- Full Name -->
+      <div class="col-md-6">
+        <label class="form-label fw-semibold">Full Name</label>
+        <input type="text" class="form-control" formControlName="fullName" placeholder="Enter your full name">
+      </div>
+
+      <!-- Phone -->
+      <div class="col-md-6">
+        <label class="form-label fw-semibold">Phone</label>
+        <input type="text" class="form-control" formControlName="phone" placeholder="Eg: 01012345678">
+      </div>
+
+      <!-- Another Phone -->
+      <div class="col-md-6">
+        <label class="form-label fw-semibold">Another Phone </label>
+        <input type="text" class="form-control" formControlName="anotherPhone" placeholder="Optional second phone">
+      </div>
+
+      <!-- Address Line -->
+      <div class="col-md-6">
+        <label class="form-label fw-semibold">Address</label>
+        <input type="text" class="form-control" formControlName="addressLine" placeholder="Street, Building, etc.">
+      </div>
+
+      <!-- City -->
+      <div class="col-md-4">
+        <label class="form-label fw-semibold">City</label>
+        <input type="text" class="form-control" formControlName="city">
+      </div>
+
+      <!-- Gov -->
+      <div class="col-md-4">
+        <label class="form-label fw-semibold">Governorate</label>
+        <select class="form-select" formControlName="gov">
+          <option value="" disabled selected>Select a governorate</option>
+          <option *ngFor="let gov of shippingPrices" [value]="gov.name">
+            {{ gov.name }} - {{ gov.price }} EGP
+          </option>
+        </select>
+      </div>
+
+      <!-- Country -->
+      <div class="col-md-4">
+        <label class="form-label fw-semibold">Country</label>
+        <input type="text" class="form-control" formControlName="country">
+      </div>
+
+      <!-- Notes -->
+      <div class="col-12 fw-semibold">
+        <label class="form-label">Notes </label>
+        <textarea class="form-control" rows="3" formControlName="notes" placeholder="e.g. Near KFC, ring the bell..."></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-dark px-5 py-2 rounded-pill mt-3 fw-semibold">
+          Confirm Order
+        </button>
+      </div>
+
+    </div>
+  </form>
+</section>

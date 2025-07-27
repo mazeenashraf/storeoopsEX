@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Update Category</h2>
+
+  <form (ngSubmit)="updateCategory()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Category Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        [(ngModel)]="categoryName"
+        name="name"
+        required
+      />
+    </div>
+
+    <button type="submit" class="submit-btn">Update</button>
+  </form>
+</div>

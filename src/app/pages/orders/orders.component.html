@@ -1,0 +1,57 @@
+<section class="mysec">
+  <div class="container">
+    <div class="mt-3 pt-3">
+      <h1 class="mt-3 pt-3">My Orders</h1>
+    </div>
+
+    <!-- Orders Table -->
+    <table>
+      <thead class="bg-black">
+        <tr>
+          <th>Order #</th>
+          <!-- <th>Date</th> -->
+          <th>Gov</th>
+          <th>Total</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (ord of myOrder; track ord._id) {
+          <tr>
+            <td>{{ ord.orderNumber }}</td>
+            <!-- <td>{{ ord.createdAt }}</td> -->
+            <td>{{ ord.shippingAddress.gov }}</td>
+            <td>{{ ord.Total }} EGP</td>
+            <td>
+              <span
+                class="status-badge text-capitalize"
+                [style.backgroundColor]="
+                  ord.status === 'pending' ? '#ffc107' :
+                  ord.status === 'processing' ? '#17a2b8' :
+                  ord.status === 'shipped' ? '#007bff' :
+                  ord.status === 'delivered' ? '#28a745' :
+                  ord.status === 'cancelled' ? '#dc3545' :
+                  '#6c757d'
+                "
+                style="color: #fff;"
+              >
+                {{ ord.status }}
+              </span>
+            </td>
+            <td>
+              <a
+  class="btn-view"
+  role="button"
+  [routerLink]="['/vieworderuser', ord._id]"
+>
+  View
+</a>
+
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>
