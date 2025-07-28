@@ -8,38 +8,23 @@
 
   <div
     class="dropdown-box position-absolute end-0 mt-2 p-3 bg-white shadow-lg rounded border"
-    style="z-index: 1050; width: 320px;"
     *ngIf="isOpen"
   >
     <div class="dropdown-header fw-semibold border-bottom pb-2 mb-2">Notifications</div>
 
     <div *ngIf="notifications.length > 0; else noNotifications">
-      <!-- تكرار يدوي -->
-      <div class="notification-item mb-2 pb-2 border-bottom" *ngIf="notifications[0]">
-        <div class="fw-semibold">{{ notifications[0].title }}</div>
-        <div class="text-muted small">{{ notifications[0].message }}</div>
+      <div class="notification-item mb-2 pb-2 border-bottom" *ngFor="let notif of notifications | slice:0:3">
+        <div class="fw-semibold">{{ notif.title }}</div>
+        <div class="text-muted small">{{ notif.message }}</div>
       </div>
 
-      <div class="notification-item mb-2 pb-2 border-bottom" *ngIf="notifications[1]">
-        <div class="fw-semibold">{{ notifications[1].title }}</div>
-        <div class="text-muted small">{{ notifications[1].message }}</div>
+      <div class="dropdown-actions d-flex flex-column gap-2 mt-3">
+        <button class="btn btn-sm btn-outline-dark w-100" (click)="clearNotifaction()">Clear</button>
       </div>
-
-      <div class="notification-item mb-2 pb-2 border-bottom" *ngIf="notifications[2]">
-        <div class="fw-semibold">{{ notifications[2].title }}</div>
-        <div class="text-muted small">{{ notifications[2].message }}</div>
-      </div>
-
-      <!-- أكشنات -->
-      <!-- أكشنات -->
-<div class="dropdown-actions d-flex flex-column gap-2 mt-3">
-
-  <button class="btn btn-sm btn-outline-dark w-100" (click)="clearNotifaction()">Clear</button>
-</div>
     </div>
 
     <ng-template #noNotifications>
       <div class="text-center text-muted py-2">No notifications</div>
     </ng-template>
-  </div>
+  </div>
 </div>

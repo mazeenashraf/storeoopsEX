@@ -22,3 +22,20 @@
 .dropdown-actions button {
   font-size: 0.875rem;
 }
+
+
+.dropdown-box {
+  width: 320px;
+  max-height: 400px;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 576px) {
+  .dropdown-box {
+    width: 90vw; /* ياخد 90% من عرض الشاشة */
+    right: 50%;
+    left: 50%;
+    transform: translateX(-50%); /* يتوسط الشاشة */
+  }
+}
