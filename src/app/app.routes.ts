@@ -18,25 +18,25 @@ export const routes: Routes = [
         path: 'login',
         loadComponent: () =>
           import('./pages/login/login.component').then((m) => m.LoginComponent),
-        title: 'login',
+        title: 'Login',
       },
       {
         path: 'register',
         loadComponent: () =>
           import('./pages/register/register.component').then((m) => m.RegisterComponent),
-        title: 'register',
+        title: 'Register',
       },
        {
       path: 'forgetpassword',
       loadComponent: () =>
         import('./pages/forgetpassword/forgetpassword.component').then((m) => m.ForgetpasswordComponent),
-      title: 'forgetpassword',
+      title: 'Forget Password',
     },
      {
       path: 'resetpassword',
       loadComponent: () =>
         import('./pages/resetpassword/resetpassword/resetpassword.component').then((m) => m.ResetpasswordComponent),
-      title: 'resetpassword',
+      title: 'Reset Password',
     },
     ],
   },
@@ -50,41 +50,41 @@ export const routes: Routes = [
         path: 'home',
         loadComponent: () =>
           import('./pages/home/home.component').then((m) => m.HomeComponent),
-        title: 'home',
+        title: 'Oops',
       },
       {
         path: 'cart',
         canActivate: [authGuard],
         loadComponent: () =>
           import('./pages/cart/cart.component').then((m) => m.CartComponent),
-        title: 'cart',
+        title: 'Cart',
       },
       {
         path: 'profile',
         canActivate: [authGuard],
         loadComponent: () =>
           import('./pages/profile/profile.component').then((m) => m.ProfileComponent),
-        title: 'profile',
+        title: 'My Profile',
       },
       {
         path: 'checkout',
         canActivate: [authGuard],
         loadComponent: () =>
           import('./pages/checkout/checkout.component').then((m) => m.CheckoutComponent),
-        title: 'checkout',
+        title: 'Checkout',
       },
       {
         path: 'products',
         loadComponent: () =>
           import('./pages/products/products.component').then((m) => m.ProductsComponent),
-        title: 'products',
+        title: 'Our Products',
       },
       {
         path: 'details/:id',
 
         loadComponent: () =>
           import('./shared/component/details/details.component').then((m) => m.DetailsComponent),
-        title: 'details',
+        title: 'Product Details',
       },
       {
         path: 'all-products-admin',
@@ -108,7 +108,7 @@ export const routes: Routes = [
         canActivate: [authGuard],
         loadComponent: () =>
           import('./pages/orders/orders.component').then((m) => m.OrdersComponent),
-        title: 'orders',
+        title: 'My Orders',
       },
       {
         path: 'vieworderuser/:id',
@@ -195,9 +195,9 @@ export const routes: Routes = [
 ,
       // 🔚 fallback 404
       {
-        path: '**',
+        path: '',
         component: NotfoundComponent,
-        title: 'notfound',
+        title: 'Not Found',
       },
     ],
   },

@@ -2,13 +2,13 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserordersService } from '../../../core/services/userorders/userorders.service';
 import { Iuserorder } from '../../../shared/interfaces/Iuserorder/iuserorder';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgFor, NgIf } from '@angular/common';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-vieworderuser',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule , NgFor , ],
   templateUrl: './vieworderuser.component.html',
   styleUrl: './vieworderuser.component.css'
 })
